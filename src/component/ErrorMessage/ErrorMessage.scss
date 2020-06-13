@@ -1,0 +1,20 @@
+.error-message {
+    width: 248px;
+    height: 36px;
+    background: #FFE9DB;
+    padding: 18px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    &__message {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        margin-left: 18px;
+    }
+}

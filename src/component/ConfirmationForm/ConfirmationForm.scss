@@ -1,0 +1,17 @@
+.confirmation-form {
+    width: 600px;
+    height: 100px;
+    display: flex;
+	flex-direction: column;
+    align-items: flex-start;
+
+    h2 {
+        margin-top: 0;
+    }
+    
+    &__panel {
+        display: flex;
+		flex-direction: row;
+		align-self: flex-end;
+    }
+}

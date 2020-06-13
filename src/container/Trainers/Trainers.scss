@@ -1,0 +1,32 @@
+.trainer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &__information {
+        display: flex;
+        flex-direction: column;
+
+        &-header {
+            margin: 5px;
+        }
+    }
+}
+
+.trainers-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__galary {
+        width: 930px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+

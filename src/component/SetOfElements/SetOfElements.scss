@@ -1,0 +1,16 @@
+.container-elements {
+    width: 930px;
+    height: 930px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    &__items {
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 300px;
+        height: 300px;
+    }
+}

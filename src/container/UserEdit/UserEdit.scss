@@ -1,0 +1,49 @@
+.user-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 24px 22px;
+
+    &__header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        h2 {
+            margin-top: 12px;
+        }
+
+        &-button {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        &-avatar {
+            background-color: '#61bee8';
+        }
+    }
+
+    &__content {
+        height: 288px;
+        margin: 12px 22px;
+        width: calc(100% - 88px);
+        background: #FFFFFF;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        padding: 24px 24px 36px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &-list-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+}

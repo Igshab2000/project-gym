@@ -1,0 +1,17 @@
+.my-subscription {
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-subscribers {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+    }
+
+
+}
