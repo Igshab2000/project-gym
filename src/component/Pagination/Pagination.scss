@@ -14,4 +14,10 @@
         background-color: #fff;
         border: 1px solid #dee2e6;
     }
+
+    &__disabled {
+        pointer-events: none; 
+        cursor: default; 
+        color: #888;    
+    }
 }

@@ -16,8 +16,8 @@ import save from '../../store/action/save/save';
 
 
 const buttonsName = [
-    {name: 'Главная', type: 'main', href: '/'},
     {name: 'Абонементы', type: 'main', href: '/subscription'},
+    {name: 'Тренеры', type: 'main', href: '/trainers'},
     {name: 'Расписание', type: 'main', href: '/timetable'},
     {name: 'Войти', type: 'main', href: '/sign-in'}
 ]
@@ -52,21 +52,25 @@ const headerButton = (user) => {
         }
 
         return (
+          <MainButton
+            type={button.type}
+            key={index}
+            styleCss={{
+              marginRight: '50px',
+              hover: 'pointer'
+            }}
+            onClick={button.onClick ? button.onClick: null}
+          >
             <Link
-                key={index}
-                to={button.href}
+              to={button.href}
+              style={{
+                textDecoration: 'none',
+                color: 'white'
+              }}
             >
-                <MainButton
-                    type={button.type}
-                    styleCss={{
-                        marginRight: '50px'
-                    }}
-                    onClick={button.onClick ? button.onClick: null}
-                >
-                {button.name}  
-                </MainButton>
+              {button.name}  
             </Link>
-            
+          </MainButton>  
         )
     })
 }

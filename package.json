@@ -20,6 +20,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-slick": "^0.26.1",
+    "react-toastify": "^6.0.6",
     "react-whirligig": "^6.6.2",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",

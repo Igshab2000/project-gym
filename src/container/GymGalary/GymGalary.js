@@ -17,6 +17,7 @@ class GymGalary extends Component {
             itemsPerPage: 9,
             items: []
         }
+        
     }
 
     paginate = pageNumber => this.setState({
@@ -42,6 +43,7 @@ class GymGalary extends Component {
         if(items) {
             currentPosts = items.slice(indexOfFirstPost, indexOfLastItems);
         } 
+        
         return (
             <Layout>
                 {isEmpty(currentPosts) ?
@@ -55,6 +57,7 @@ class GymGalary extends Component {
                             totalPosts={items.length}
                             paginate={this.paginate}
                             href='/gym-galary'
+                            currentPage={this.state.currentPage}
                         />
                     </div>
                     :

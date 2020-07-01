@@ -76,13 +76,15 @@ class Trainers extends Component {
 
     render() {
         const { trainers } = this.props;
-        const { item } = this.state;
+        const { item, isShow } = this.state;
         return(
             <Layout>
                 <div className='trainers-container' onClick={() => {
-                    this.setState({
-                        isShow: !this.state.isShow,
-                    })
+                    if(isShow) {
+                        this.setState({
+                            isShow: !isShow,
+                        })
+                    }
                 }}>
                     <h2>Тренерский состав</h2>
                     <div className='trainers-container__galary'>

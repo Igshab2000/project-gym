@@ -27,7 +27,11 @@ class Stock extends Component {
     bigCard = () => {
         const { header, price, style, user, id } = this.props;
         return (
-            <div className='stock' style={style ? style : null}>
+            <div 
+                className='stock' 
+                style={style ? style : null}
+                onClick={() => this.toBook(id)}
+            >
                 <div className='stock-content'>
                     <h3>
                         {header}

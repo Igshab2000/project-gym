@@ -8,8 +8,11 @@ import { formValidator, onlyEmail, passLength } from '../../utils/validator';
 import { reduxForm } from "redux-form";
 import Label from '../../component/UI/Label/Label';
 import Input from '../../component/UI/Input/Input';
+import { withFirestore } from 'react-firestore';
 import save from '../../store/action/save/save';
 import { fire } from '../../index';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './UserEdit.scss';
 
 class UserEdit extends Component {
@@ -28,7 +31,7 @@ class UserEdit extends Component {
     }
 
     handleSubmit = field => {
-        const { userSave } = this.props;
+        const { userSave, history } = this.props;
 
         const user = {
             firstName: field.firstNameField,
@@ -47,8 +50,9 @@ class UserEdit extends Component {
         fire.firestore()
             .collection("users")
             .doc(user.login)
-            .set(user)
-
+            .set(user);
+        
+        this.notify();    
     }
 
     showListInput() {
@@ -76,18 +80,33 @@ class UserEdit extends Component {
                     width: '450px',
                     position: 'relative'
                 }}
+                styleSpan={{
+                    marginLeft: "120px",
+                }}
                 validate={field.typeValidation ? field.typeValidation : null}
               />
             </div>
           )
         })
-      }  
+    }
+      
+    notify = () => toast("Профиль обновлен");
     
     render() {
         const { user } = this.props;
         return(
             <Layout>
-                <form className='user-edit' onSubmit={this.props.handleSubmit(this.handleSubmit)}>
+                <form className="user-edit" onSubmit={this.props.handleSubmit(this.handleSubmit)}>
+                    <ToastContainer
+                        autoClose={1000}
+                        hideProgressBar={true} 
+                        style={{
+                            zIndex: 100,
+                            position: "absolute",
+                            top: "62px",
+                            left: "40%"
+                        }}
+                    />
                     <div className='user-edit__header'>
                         <div>
                             <IconButton
@@ -151,4 +170,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(connectedToReduxForm(UserEdit));
+export default connect(mapStateToProps, mapDispatchToProps)(connectedToReduxForm(withFirestore(UserEdit)));
